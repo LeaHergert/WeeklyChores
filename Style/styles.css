@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chore-planner {
+    display: grid;
+    grid-template-rows: auto repeat(9, 1fr); /* Adjust as needed */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.header, .row {
+    display: grid;
+    grid-template-columns: auto repeat(9, 1fr);
+    border: 1px solid #ccc;
+}
+
+.cell {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.cell.room {
+    position: relative;
+}
+
+.add-task-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.cell.weekdays {
+    cursor: pointer;
+}
+
+.cell.weekdays.completed {
+    background-color: #aaffaa; /* Adjust as needed */
+}
+
+/* Add more styles as needed */
+
+
+

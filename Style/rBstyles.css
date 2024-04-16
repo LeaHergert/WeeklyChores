@@ -1,0 +1,499 @@
+
+
+/* rebuild style */
+
+@font-face {
+    font-family: Flower;
+    src: url("Fonts/Indie_Flower/IndieFlower-Regular.ttf");
+}
+@font-face {
+    font-family: Rock;
+    src: url("Fonts/Rock_Salt/RockSalt-Regular.ttf");
+}
+@font-face {
+    font-family: Russo;
+    src: url("Fonts/Russo_One/RussoOne-Regular.ttf");
+}
+@font-face {
+    font-family: SourceCode;
+    src: url("Fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: Walter;
+    src: url("Fonts/Walter_Turncoat/WalterTurncoat-Regular.ttf");
+}
+
+:root{
+    --teal: #29A0B1;
+--tealGreen: #256e5e;
+--mint: #79caa4;
+--spearmint: #7ab9b6;
+--darkTeal: #0d252c;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(112, 112, 112); */
+    background-color: var(--darkTeal);
+}
+/* body:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: black url(Images/reference.jpeg) no-repeat fixed center;
+        background-size: contain;
+}   */
+
+
+header {
+    display: grid;
+    gap: 10px;
+    color: var(--tealGreen);
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+
+}
+
+header h2{
+    justify-self: center;
+    margin-top: -20px;
+}
+
+header a{
+    justify-self: left;
+
+    width: 40px;
+    height: 40px;
+}
+
+main{
+    opacity: 1;
+    position: relative;
+    padding-top: 10px;
+}
+
+footer{
+
+}
+
+h1 {
+    font-family: Walter;
+    font-size: 2em;
+}
+
+h2 {
+    font-family: Walter;
+
+    font-size: 1.5em;
+}
+
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+#event {
+    background-color: #e9ecef;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+#event p {
+    font-size: 1.2em;
+}
+
+#event button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#tiles {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px;
+}
+
+.tile {
+    display: grid;
+    font-family: Walter;
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: left;
+    border-radius: 10px;
+
+}
+.tile svg{
+fill: var(--mint);
+ width: 40px;
+ height: 40px;
+ justify-self: right;
+}
+
+.tile:nth-child(2) svg,
+.tile:nth-child(3) svg{
+fill: var(--spearmint);
+
+}
+
+
+#newtask{
+    position: relative;
+    padding: 30px 20px;
+}
+#newtask input{
+    width: 75%;
+    height: 45px;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid var(--spearmint);
+}
+
+#newtask input:focus{
+    outline: none;
+    border-color: var(--spearmint);
+}
+#newtask button{
+    position: relative;
+    float: right;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: var(--spearmint);
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+}
+#tasks{
+    width: 100%;
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 10px;
+    min-height: 40vh;
+}
+
+.task{
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--spearmint);
+    cursor: pointer;
+    background-color: var(--darkTeal);
+    color: white;
+    height: 50px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    display: flex;
+}
+.task span{
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.task button{
+    background-color: var(--spearmint);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 100%;
+    width: 40px;
+    border-radius: 5px;
+}
+
+
+/* <div class="checkbox-wrapper-11">
+  <input id="02-11" type="checkbox" name="r" value="2">
+  <label for="02-11">To-do</label>
+</div> */
+
+
+  .task {
+    --text: white;
+    --check: var(--spearmint);
+    --disabled: white;
+    --border-radius: 10px;
+    /* border-radius: var(--border-radius);
+    position: relative;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center; */
+  }
+  .task label {
+    color: var(--text);
+    position: relative;
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: 100%;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  .task label::before,
+  .task label::after {
+    content: "";
+    position: absolute;
+  }
+  .task label::before {
+    height: 2px;
+    width: 8px;
+    left: -27px;
+    background: var(--check);
+    border-radius: 2px;
+    transition: background 0.3s ease;
+  }
+  .task label:after {
+    height: 4px;
+    width: 4px;
+    top: 8px;
+    left: -25px;
+    border-radius: 50%;
+  }
+  .task input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    height: 15px;
+    width: 15px;
+    outline: none;
+    border: 0;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    background: var(--background);
+    display: grid;
+    align-items: center;
+  }
+  .task input[type=checkbox]::before, .task input[type=checkbox]::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    top: auto;
+    background: var(--check);
+    border-radius: 2px;
+  }
+  .task input[type=checkbox]::before {
+    width: 0px;
+    right: 60%;
+    transform-origin: right bottom;
+  }
+  .task input[type=checkbox]::after {
+    width: 0px;
+    left: 40%;
+    transform-origin: left bottom;
+  }
+  .task input[type=checkbox]:checked::before {
+    -webkit-animation: check-01-11 0.4s ease forwards;
+            animation: check-01-11 0.4s ease forwards;
+  }
+  .task input[type=checkbox]:checked::after {
+    -webkit-animation: check-02-11 0.4s ease forwards;
+            animation: check-02-11 0.4s ease forwards;
+  }
+  .task input[type=checkbox]:checked + label {
+    color: var(--disabled);
+    -webkit-animation: move-11 0.3s ease 0.1s forwards;
+            animation: move-11 0.3s ease 0.1s forwards;
+  }
+  .task input[type=checkbox]:checked + label::before {
+    background: var(--disabled);
+    -webkit-animation: slice-11 0.4s ease forwards;
+            animation: slice-11 0.4s ease forwards;
+  }
+  .task input[type=checkbox]:checked + label::after {
+    -webkit-animation: firework-11 0.5s ease forwards 0.1s;
+            animation: firework-11 0.5s ease forwards 0.1s;
+  }
+
+  @-webkit-keyframes move-11 {
+    50% {
+      padding-left: 8px;
+      padding-right: 0px;
+    }
+    100% {
+      padding-right: 4px;
+    }
+  }
+
+  @keyframes move-11 {
+    50% {
+      padding-left: 8px;
+      padding-right: 0px;
+    }
+    100% {
+      padding-right: 4px;
+    }
+  }
+  @-webkit-keyframes slice-11 {
+    60% {
+      width: 100%;
+      left: 4px;
+    }
+    100% {
+      width: 100%;
+      left: -2px;
+      padding-left: 0;
+    }
+  }
+  @keyframes slice-11 {
+    60% {
+      width: 100%;
+      left: 4px;
+    }
+    100% {
+      width: 100%;
+      left: -2px;
+      padding-left: 0;
+    }
+  }
+  @-webkit-keyframes check-01-11 {
+    0% {
+      width: 4px;
+      top: auto;
+      transform: rotate(0);
+    }
+    50% {
+      width: 0px;
+      top: auto;
+      transform: rotate(0);
+    }
+    51% {
+      width: 0px;
+      top: 8px;
+      transform: rotate(45deg);
+    }
+    100% {
+      width: 5px;
+      top: 8px;
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes check-01-11 {
+    0% {
+      width: 4px;
+      top: auto;
+      transform: rotate(0);
+    }
+    50% {
+      width: 0px;
+      top: auto;
+      transform: rotate(0);
+    }
+    51% {
+      width: 0px;
+      top: 8px;
+      transform: rotate(45deg);
+    }
+    100% {
+      width: 5px;
+      top: 8px;
+      transform: rotate(45deg);
+    }
+  }
+  @-webkit-keyframes check-02-11 {
+    0% {
+      width: 4px;
+      top: auto;
+      transform: rotate(0);
+    }
+    50% {
+      width: 0px;
+      top: auto;
+      transform: rotate(0);
+    }
+    51% {
+      width: 0px;
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+    100% {
+      width: 10px;
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+  }
+  @keyframes check-02-11 {
+    0% {
+      width: 4px;
+      top: auto;
+      transform: rotate(0);
+    }
+    50% {
+      width: 0px;
+      top: auto;
+      transform: rotate(0);
+    }
+    51% {
+      width: 0px;
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+    100% {
+      width: 10px;
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+  }
+  @-webkit-keyframes firework-11 {
+    0% {
+      opacity: 1;
+      box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+    }
+  }
+  @keyframes firework-11 {
+    0% {
+      opacity: 1;
+      box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+    }
+  }
+
+.opaque{
+    background-color: var(--darkTeal);
+    opacity: 0.7;
+}
